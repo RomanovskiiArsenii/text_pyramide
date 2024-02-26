@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@800&display=swap');
+
+:root {
+    --coeff: calc(1vw);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*::selection {
+    background-color: rgba(255, 255, 255, 0.164);
+}
+
+body {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: rgb(24, 24, 24);
+}
+
+.folded-text {
+    margin: calc(var(--coeff) * 10) auto;
+}
+
+.container {
+    line-height: calc(var(--coeff) * 8);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.face {
+    font-size: calc(var(--coeff) * 10);
+    word-spacing: -0.5ch;
+    text-wrap: nowrap;
+    overflow: hidden;
+}
+
+.left {
+    /* maximum number of characters in a line minus the cut part of the character */
+    width: 2.25ch;
+    color: white;
+    transform: skewY(-25deg);
+}
+
+.right {
+    /* maximum number of characters in a line */
+    width: 10ch;
+    text-indent: -0.25ch;
+    color: rgb(211, 211, 211);
+
+    /* translateY to combine text cuts vertically */
+    transform: skewY(25deg) translateY(136%);
+}
+.bottom {
+    /* maximum number of characters in a line */
+    width: 16ch;
+    font-size: calc(var(--coeff) * 5);
+    text-decoration: underline;
+    color: rgb(143, 143, 143);
+    transform: skew(-65deg, 25deg) translate(20%, 57%) scaleY(1.3) scaleX(1.18);
+}
